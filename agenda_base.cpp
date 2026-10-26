@@ -9,85 +9,186 @@
 #include <string>
 #include <vector>
 using namespace std;
-
-struct A {
-    string p;
-    string pr;
-    string d;
-    int h;
-    int dur;
-    string st;
+/*
+d = data
+dur = duração (minutos)
+h = Horario
+p = pessoa (cliente)
+pr = profissional
+*/
+struct Atendimento {
+  string cliente;
+  string profissional;
+  string data;
+  int horario;
+  int duração_em_minutos;
+  string status;
 };
 
-vector<A> ag;
+vector<Atendimento> agenda;
+/*
+ ========================================================================================================
+ MODIFICAÇÕES NA FUNÇÃO DE AGENDAR ATENDIMENTO
+ => função separada pra validar horario
+ => função separada pra validar a duração da conuslta (maior que 0);
+ => função unica para verificar se ja tem uma consulta marcada com esse
+ profissional nesse mesmo dia e horario
+ => função que adciona a consulta na agenda
+ */
 
-void add(string p, string pr, string d, int h, int dur) {
-    // adiciona na lista
-    try {
-        if (h >= 8) {
-            if (h < 18) {
-                if (dur > 0) {
-                    bool ok = true;
-                    for (int i = 0; i < ag.size(); i++) {
-                        if (ag[i].d == d && ag[i].h == h && ag[i].pr == pr) {
-                            ok = false;
-                        }
-                    }
-                    if (ok) {
-                        ag.push_back({p, pr, d, h, dur, "MARCADO"});
-                        cout << "Atendimento marcado para " << p << endl;
-                    } else {
-                        cout << "Horario ocupado" << endl;
-                    }
-                }
-            }
-        }
-    } catch (...) {
+bool validar_horario(int &horario) { return horario >= 8 && horario < 18; }
+
+bool validar_duração(int &duração_em_minutos) { return duração_em_minutos > 0; }
+bool validar_disponibilidade(string &profissional, string &data, int &horario) {
+  bool disponibilidade = true;
+  int tamanho = agenda.size();
+
+  for (int cliente = 0; cliente < tamanho; cliente++) {
+    if (agenda[cliente].data == data && agenda[cliente].horario == horario &&
+        agenda[cliente].profissional == profissional) {
+      disponibilidade = false;
+      return disponibilidade;
     }
+  }
+
+  return disponibilidade;
 }
 
-void rem(string p, string d, int h, string nd, int nh) {
-    // remarca o atendimento
-    for (int i = 0; i < ag.size(); i++) {
-        if (ag[i].p == p && ag[i].d == d && ag[i].h == h) {
-            bool ok = true;
-            for (int j = 0; j < ag.size(); j++) {
-                if (ag[j].d == nd && ag[j].h == nh && ag[j].pr == ag[i].pr) {
-                    ok = false;
-                }
-            }
-            if (ok) {
-                ag[i].d = nd;
-                ag[i].h = nh;
-                cout << "Remarcado" << endl;
-            } else {
-                cout << "Horario ocupado" << endl;
-            }
-        }
+void adcionar_consulta(string cliente, string profissional, string data,
+                       int horario, int duração_em_minutos) {
+
+  agenda.push_back(
+      {cliente, profissional, data, horario, duração_em_minutos, "MARCADO"});
+
+  cout << "Atendimento marcado para " << cliente << endl;
+}
+
+void agendar_atendimento(string cliente, string profissional, string data,
+                         int horario, int duração_em_minutos) {
+
+  if (!validar_horario(horario)) {
+
+    cout << "horario invalido" << endl;
+    return;
+  }
+
+  if (!validar_duração(duração_em_minutos)) {
+    cout << "duração inválida" << endl;
+    return;
+  }
+
+  if (!validar_disponibilidade(profissional, data, horario)) {
+    cout << "Horario Ocupado" << endl;
+    return;
+  }
+
+  adcionar_consulta(cliente, profissional, data, horario, duração_em_minutos);
+}
+//=========================================================================================
+//  =====================================BLOCO_2===========================================
+//=========================================================================================
+
+/*
+ FUNCAO DE REMARCAR O ATENDIMENTO: ETAPAS :;:::::
+ => CHECA SE EXISTE ALGUM CLIENTE COM ESSE MESMO NOME, DATA E HORARIO.
+ => CHECA SE O HORARIO QUE ESTAMOS QUERENDO JA TEM ALGUMA CONSULTA MARCADA NELE
+ com esse profissional;
+ => REMARCA CASO ESTEJA TUDO CERTO
+ */
+
+int extrair_consulta(string cliente, string data, int horario) {
+
+  int consulta = -1;
+
+  for (int i = 0; i < agenda.size(); i++) {
+    if (agenda[i].cliente == cliente && agenda[i].data == data &&
+        agenda[i].horario == horario) {
+      consulta = i;
+      return consulta;
     }
+  }
+
+  return consulta;
+}
+
+bool validar_disponibilidade_de_remarcar(int consulta, int novo_horario,
+                                         string nova_data) {
+  string profissional = agenda[consulta].profissional;
+  string data = agenda[consulta].data;
+  int horario = agenda[consulta].horario;
+
+  for (int i = 0; i < agenda.size(); i++) {
+    if (data == nova_data && horario == novo_horario &&
+        agenda[i].profissional == profissional) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+void atualizar_consulta(int consulta, string nova_data, int novo_horario) {
+  agenda[consulta].data = nova_data;
+  agenda[consulta].horario = novo_horario;
+  cout << "Remarcado" << endl;
+}
+
+void remarcar_atendimento(string cliente, string data, int horario,
+                          string nova_data, int novo_horario) {
+  // remarca o atendimento
+  int consulta = extrair_consulta(cliente, data, horario);
+
+  if (consulta == -1) {
+    cout << "Os dados do agendamento inserido nao foram encontrados no sistema"
+         << endl;
+    return;
+  }
+
+  if (!validar_disponibilidade_de_remarcar(consulta, novo_horario, nova_data)) {
+    cout << "O horario desejado nao está disponivel! " << endl;
+    return;
+  }
+
+  atualizar_consulta(consulta, nova_data, novo_horario);
 }
 
 // void desmarcar(string p, string d, int h) {
 //     ag.erase(...);
 // }
 
-// TODO: rever isso depois (Joao, 2025)
+// TODO: função de desmarcar consulta (Joao, 2025)
+/*
+ =============================================================================================
+ ===============================BLOCO
+ 3=======================================================
+ =============================================================================================
 
-void lst(string d) {
-    // lista os atendimentos do mes
-    for (int i = 0; i < ag.size(); i++) {
-        if (ag[i].d == d) {
-            cout << ag[i].h << " " << ag[i].p << " " << ag[i].pr << " "
-                 << ag[i].st << endl;
-        }
+  FUNCAO DE LISTAR ATENDIMENTOS;
+
+*/
+string extrair_mes(string data) {
+  string mes;
+  mes.push_back(data[5]);
+  mes.push_back(data[6]);
+
+  return mes;
+}
+
+void listar_atendimentos_mes(string mes) {
+  for (int i = 0; i < agenda.size(); i++) {
+    string mes_atual = extrair_mes(agenda[i].data);
+    if (mes_atual == mes) {
+      cout << agenda[i].horario << " " << agenda[i].cliente << " "
+           << agenda[i].profissional << " " << agenda[i].status << endl;
     }
+  }
 }
 
 int main() {
-    add("Ana", "Dr. Silva", "2026-10-05", 9, 30);
-    add("Bruno", "Dr. Silva", "2026-10-05", 9, 30);
-    add("Carla", "Dra. Souza", "2026-10-05", 14, 60);
-    rem("Ana", "2026-10-05", 9, "2026-10-06", 10);
-    lst("2026-10-05");
-    return 0;
+  agendar_atendimento("Ana", "Dr. Silva", "2026-10-05", 9, 30);
+  agendar_atendimento("Bruno", "Dr. Silva", "2026-10-05", 9, 30);
+  agendar_atendimento("Carla", "Dra. Souza", "2026-10-05", 14, 60);
+  remarcar_atendimento("Ana", "2026-10-05", 9, "2026-10-06", 10);
+  listar_atendimentos_mes("10");
+  return 0;
 }
