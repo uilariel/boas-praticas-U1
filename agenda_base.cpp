@@ -175,13 +175,20 @@ string extrair_mes(string data) {
 }
 
 void listar_atendimentos_mes(string mes) {
+  bool tem_atendimento = false;
+
   for (int i = 0; i < agenda.size(); i++) {
     string mes_atual = extrair_mes(agenda[i].data);
     if (mes_atual == mes) {
-      cout << agenda[i].horario << " " << agenda[i].cliente << " "
-           << agenda[i].profissional << " " << agenda[i].status << endl;
+      tem_atendimento = true;
+
+      cout << agenda[i].data << " " << agenda[i].horario << " " << agenda[i].cliente 
+           << " " << agenda[i].profissional << " " << agenda[i].status << endl;
     }
   }
+
+  if (tem_atendimento == false)
+    cout << "Sem atendimentos marcados para o mês indicado.\n";
 }
 
 int main() {
