@@ -87,7 +87,7 @@ bool validar_data(string data) {
     return false;
   }
 
-  if (ano_valor < 2026 or mes_valor <= 0 or dia_valor <= 0)
+  if (ano_valor < 1 or mes_valor <= 0 or dia_valor <= 0)
     return false;
   
   if (mes_valor > 12 or dia_valor > 30)
@@ -239,6 +239,6 @@ void listar_atendimentos_mes(string mes) {
 }
 
 int main() {
-  agendar_atendimento("Ana", "Dr. Silva", "alal-la-la", 9, 30);
+  agendar_atendimento("Ana", "Dr. Silva", "2026-08-20", 9.67, 123);
   return 0;
 }
