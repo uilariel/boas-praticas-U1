@@ -14,9 +14,12 @@ struct Atendimento {
 
 vector<Atendimento> agenda;
 
-bool validar_horario(int &horario) { return horario >= 8 && horario <= 17; }
+bool validar_horario(float &horario) { return horario >= 8 && horario <= 17; }
 
-bool validar_duração(int &duração_em_minutos) { return duração_em_minutos > 0; }
+bool validar_duração(int &duração_em_minutos) {
+  return duração_em_minutos % 15 == 0 and duração_em_minutos > 0 and 
+         duração_em_minutos <= 120;
+}
 
 /**
  * @brief Valida a disponibilidade do profissional
@@ -34,8 +37,7 @@ bool validar_duração(int &duração_em_minutos) { return duração_em_minutos 
 // Só compara o horário de início, e não a sobreposição das durações,
 // porque o horário é guardado como hora cheia e isso mantém simples.
 
-bool validar_disponibilidade(string &profissional, string &data, int &horario) {
-
+bool validar_disponibilidade(string &profissional, string &data, float &horario) {
   bool disponibilidade = true;
   int tamanho = agenda.size();
 
@@ -59,7 +61,6 @@ bool validar_disponibilidade(string &profissional, string &data, int &horario) {
  * @return true Se a data for válida e falsa caso contrário. 
  * 
  */
-
 bool validar_data(string data) {
   if (data.length() != 10)
     return false;
@@ -82,7 +83,6 @@ bool validar_data(string data) {
   int ano_valor;
   int mes_valor;
   int dia_valor;
-  
 
   try {
     ano_valor = stoi(ano);
@@ -123,18 +123,22 @@ void adicionar_consulta(string cliente, string profissional, string data,
  * @param duração_em_minutos Duração do atendimento em minutos
  * 
  */
-
 void agendar_atendimento(string cliente, string profissional, string data,
-                         int horario, int duração_em_minutos) {
+                         float horario, int duração_em_minutos) {
 
   if (!validar_horario(horario)) {
 
-    cout << "horario invalido" << endl;
+    cout << "Horário inválido" << endl;
     return;
   }
 
   if (!validar_duração(duração_em_minutos)) {
     cout << "duração inválida" << endl;
+    return;
+  }
+
+  if ((horario + ((float)duração_em_minutos / 60)) > 18) {
+    cout << "Horário inválido. A consulta deve terminar até as 18h.\n";
     return;
   }
 
@@ -144,7 +148,7 @@ void agendar_atendimento(string cliente, string profissional, string data,
   }
 
   if (!validar_disponibilidade(profissional, data, horario)) {
-    cout << "Horario Ocupado" << endl;
+    cout << "Horário ocupado" << endl;
     return;
   }
 
@@ -161,8 +165,7 @@ void agendar_atendimento(string cliente, string profissional, string data,
  * @param horario Horário do atendimento 
  * @return int Índice da consulta na agenda ou -1 caso não seja encontrada.
  */
-
-int extrair_consulta(string cliente, string data, int horario) {
+int extrair_consulta(string cliente, string data, float horario) {
 
   int consulta = -1;
 
@@ -187,8 +190,7 @@ int extrair_consulta(string cliente, string data, int horario) {
  * @param nova_data Nova data para o atendimento
  * @return true Se o profissional estiver disponível e falso caso contrário.
  */
-
-bool validar_disponibilidade_de_remarcar(int consulta, int novo_horario,
+bool validar_disponibilidade_de_remarcar(int consulta, float novo_horario,
                                          string nova_data) {
   string profissional = agenda[consulta].profissional;
   string data = agenda[consulta].data;
@@ -204,7 +206,7 @@ bool validar_disponibilidade_de_remarcar(int consulta, int novo_horario,
   return true;
 }
 
-void atualizar_consulta(int consulta, string nova_data, int novo_horario) {
+void atualizar_consulta(int consulta, string nova_data, float novo_horario) {
   agenda[consulta].data = nova_data;
   agenda[consulta].horario = novo_horario;
   cout << "Remarcado" << endl;
@@ -223,9 +225,8 @@ void atualizar_consulta(int consulta, string nova_data, int novo_horario) {
  * @param novo_horario Novo horário do atendimento 
  * 
  */
-
-void remarcar_atendimento(string cliente, string data, int horario,
-                          string nova_data, int novo_horario) {
+void remarcar_atendimento(string cliente, string data, float horario,
+                          string nova_data, float novo_horario) {
   // remarca o atendimento
   int consulta = extrair_consulta(cliente, data, horario);
 
@@ -239,6 +240,21 @@ void remarcar_atendimento(string cliente, string data, int horario,
     cout << "O horario desejado nao está disponivel! " << endl;
     return;
   }
+
+  if (!validar_data(nova_data)) {
+    cout << "Nova data é inválida, não foi possível remarcar. Insira no formato AAAA-MM-DD.\n";
+    return;
+  }
+
+  if (!validar_horario(novo_horario)) {
+    cout << "Novo horário é inválido, não foi possível remarcar.\n";
+    return;
+  }
+
+  if ((novo_horario + ((float)agenda[consulta].duração_em_minutos / 60)) > 18) {
+    cout << "Novo horário é inválido. A consulta deve terminar até as 18h.\n";
+    return;
+  }  
 
   atualizar_consulta(consulta, nova_data, novo_horario);
 }
@@ -259,7 +275,6 @@ string extrair_mes(string data) {
  * 
  * @param mes Mês no formato MM
  */
-
 void listar_atendimentos_mes(string mes) {
   bool tem_atendimento = false;
 
@@ -278,6 +293,6 @@ void listar_atendimentos_mes(string mes) {
 }
 
 int main() {
-  agendar_atendimento("Ana", "Dr. Silva", "2026-08-20", 9.67, 123);
+  agendar_atendimento("Ana", "Dr. Silva", "2026-08-20", 9.5, 120);
   return 0;
 }
