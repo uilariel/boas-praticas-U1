@@ -36,7 +36,7 @@ vector<Atendimento> agenda;
  => função que adciona a consulta na agenda
  */
 
-bool validar_horario(int &horario) { return horario >= 8 && horario < 18; }
+bool validar_horario(int &horario) { return horario >= 8 && horario <= 17; }
 
 bool validar_duração(int &duração_em_minutos) { return duração_em_minutos > 0; }
 bool validar_disponibilidade(string &profissional, string &data, int &horario) {
@@ -52,6 +52,48 @@ bool validar_disponibilidade(string &profissional, string &data, int &horario) {
   }
 
   return disponibilidade;
+}
+
+bool validar_data(string data) {
+  if (data.length() != 10)
+    return false;
+
+  string ano;
+  string mes;
+  string dia;
+
+  for (int i = 0; i < data.size(); i++) {
+    if ((i == 4 or i == 7) and (data.at(i) != '-'))
+      return false;
+    if (i <= 3)
+      ano.push_back(data.at(i));
+    if (i == 5 or i == 6)
+      mes.push_back(data.at(i));
+    if (i == 8 or i == 9)
+      dia.push_back(data.at(i));
+  }
+
+  int ano_valor;
+  int mes_valor;
+  int dia_valor;
+  
+
+  try {
+    ano_valor = stoi(ano);
+    mes_valor = stoi(mes);
+    dia_valor = stoi(dia);
+
+  } catch (...) {
+    return false;
+  }
+
+  if (ano_valor < 2026 or mes_valor <= 0 or dia_valor <= 0)
+    return false;
+  
+  if (mes_valor > 12 or dia_valor > 30)
+    return false;
+
+  return true;
 }
 
 void adcionar_consulta(string cliente, string profissional, string data,
@@ -74,6 +116,11 @@ void agendar_atendimento(string cliente, string profissional, string data,
 
   if (!validar_duração(duração_em_minutos)) {
     cout << "duração inválida" << endl;
+    return;
+  }
+
+  if (!validar_data(data)){
+    cout << "Data inválida. Insira no formato AAAA-MM-DD.\n";
     return;
   }
 
@@ -192,10 +239,6 @@ void listar_atendimentos_mes(string mes) {
 }
 
 int main() {
-  agendar_atendimento("Ana", "Dr. Silva", "2026-10-05", 9, 30);
-  agendar_atendimento("Bruno", "Dr. Silva", "2026-10-05", 9, 30);
-  agendar_atendimento("Carla", "Dra. Souza", "2026-10-05", 14, 60);
-  remarcar_atendimento("Ana", "2026-10-05", 9, "2026-10-06", 10);
-  listar_atendimentos_mes("10");
+  agendar_atendimento("Ana", "Dr. Silva", "alal-la-la", 9, 30);
   return 0;
 }
