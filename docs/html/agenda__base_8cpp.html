@@ -1,0 +1,740 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AgendaFácil: Referência do Arquivo agenda_base.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">AgendaFácil
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.18.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('agenda__base_8cpp.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referência do Arquivo agenda_base.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Gráfico de dependência de inclusões para agenda_base.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="agenda__base_8cpp__incl.png" border="0" usemap="#aagenda__base_8cpp" loading="lazy" alt=""/></div>
+<!-- MAP 0 -->
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Componentes</h2></td></tr>
+<tr class="memitem:Atendimento" id="r_Atendimento"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_atendimento.html">Atendimento</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a4ec4f27734a6ef0f1282258f620ee9bd" id="r_a4ec4f27734a6ef0f1282258f620ee9bd"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a4ec4f27734a6ef0f1282258f620ee9bd">validar_horario</a> (int &amp;horario)</td></tr>
+<tr class="memitem:a6318be48dc2751451e9ca7bc69cea0f4" id="r_a6318be48dc2751451e9ca7bc69cea0f4"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a6318be48dc2751451e9ca7bc69cea0f4">validar_duração</a> (int &amp;duração_em_minutos)</td></tr>
+<tr class="memitem:a8f13f46871eaf1439c8263917cb30f0e" id="r_a8f13f46871eaf1439c8263917cb30f0e"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a8f13f46871eaf1439c8263917cb30f0e">validar_disponibilidade</a> (string &amp;profissional, string &amp;data, int &amp;horario)</td></tr>
+<tr class="memdesc:a8f13f46871eaf1439c8263917cb30f0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida a disponibilidade do profissional.  <br /></td></tr>
+<tr class="memitem:a55a4cd84dee0843efc25a010ecb29d9d" id="r_a55a4cd84dee0843efc25a010ecb29d9d"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a55a4cd84dee0843efc25a010ecb29d9d">validar_data</a> (string data)</td></tr>
+<tr class="memdesc:a55a4cd84dee0843efc25a010ecb29d9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida a data no formato AAAA-MM-DD.  <br /></td></tr>
+<tr class="memitem:aca02b56359d1e31f85e44e79d4651f28" id="r_aca02b56359d1e31f85e44e79d4651f28"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aca02b56359d1e31f85e44e79d4651f28">adicionar_consulta</a> (string cliente, string profissional, string data, int horario, int duração_em_minutos)</td></tr>
+<tr class="memitem:a4efe4ca2de74a520022feb22a7035427" id="r_a4efe4ca2de74a520022feb22a7035427"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a4efe4ca2de74a520022feb22a7035427">agendar_atendimento</a> (string cliente, string profissional, string data, int horario, int duração_em_minutos)</td></tr>
+<tr class="memdesc:a4efe4ca2de74a520022feb22a7035427"><td class="mdescLeft">&#160;</td><td class="mdescRight">Agenda um atendimento.  <br /></td></tr>
+<tr class="memitem:a3d9e451b99e5cd5e23a030be322f136b" id="r_a3d9e451b99e5cd5e23a030be322f136b"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a3d9e451b99e5cd5e23a030be322f136b">extrair_consulta</a> (string cliente, string data, int horario)</td></tr>
+<tr class="memdesc:a3d9e451b99e5cd5e23a030be322f136b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extrai a consulta da agenda.  <br /></td></tr>
+<tr class="memitem:aee2c686a846aa7d9b164d4e8d6cba462" id="r_aee2c686a846aa7d9b164d4e8d6cba462"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#aee2c686a846aa7d9b164d4e8d6cba462">validar_disponibilidade_de_remarcar</a> (int consulta, int novo_horario, string nova_data)</td></tr>
+<tr class="memdesc:aee2c686a846aa7d9b164d4e8d6cba462"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida a disponibilidade para remarcar um atendimento.  <br /></td></tr>
+<tr class="memitem:a11a11c15d122d208d0164456c85854bd" id="r_a11a11c15d122d208d0164456c85854bd"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a11a11c15d122d208d0164456c85854bd">atualizar_consulta</a> (int consulta, string nova_data, int novo_horario)</td></tr>
+<tr class="memitem:a32a3e49b865bd1e71c17a89a255caa59" id="r_a32a3e49b865bd1e71c17a89a255caa59"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a32a3e49b865bd1e71c17a89a255caa59">remarcar_atendimento</a> (string cliente, string data, int horario, string nova_data, int novo_horario)</td></tr>
+<tr class="memdesc:a32a3e49b865bd1e71c17a89a255caa59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remarca um atendimento.  <br /></td></tr>
+<tr class="memitem:a5d57981627b23ed11b84f97b3a8ee15d" id="r_a5d57981627b23ed11b84f97b3a8ee15d"><td class="memItemLeft">string&#160;</td><td class="memItemRight"><a class="el" href="#a5d57981627b23ed11b84f97b3a8ee15d">extrair_mes</a> (string data)</td></tr>
+<tr class="memitem:a7dfdd20571a7a5d64adc247c79414efc" id="r_a7dfdd20571a7a5d64adc247c79414efc"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7dfdd20571a7a5d64adc247c79414efc">listar_atendimentos_mes</a> (string mes)</td></tr>
+<tr class="memdesc:a7dfdd20571a7a5d64adc247c79414efc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lista os atendimentos de um determinado mês.  <br /></td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4" id="r_ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variáveis</h2></td></tr>
+<tr class="memitem:a15753604d406421b50d5fd419f24355c" id="r_a15753604d406421b50d5fd419f24355c"><td class="memItemLeft">vector&lt; <a class="el" href="struct_atendimento.html">Atendimento</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a15753604d406421b50d5fd419f24355c">agenda</a></td></tr>
+</table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Funções</h2>
+<a id="aca02b56359d1e31f85e44e79d4651f28" name="aca02b56359d1e31f85e44e79d4651f28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca02b56359d1e31f85e44e79d4651f28">&#9670;&#160;</a></span>adicionar_consulta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void adicionar_consulta </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>cliente</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>profissional</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>horario</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>duração_em_minutos</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="agenda__base_8cpp_aca02b56359d1e31f85e44e79d4651f28_cgraph.png" border="0" usemap="#aagenda__base_8cpp_aca02b56359d1e31f85e44e79d4651f28_cgraph" loading="lazy" alt=""/></div>
+<!-- MAP 1 -->
+</div>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="agenda__base_8cpp_aca02b56359d1e31f85e44e79d4651f28_icgraph.png" border="0" usemap="#aagenda__base_8cpp_aca02b56359d1e31f85e44e79d4651f28_icgraph" loading="lazy" alt=""/></div>
+<!-- MAP 2 -->
+</div>
+
+</div>
+</div>
+<a id="a4efe4ca2de74a520022feb22a7035427" name="a4efe4ca2de74a520022feb22a7035427"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4efe4ca2de74a520022feb22a7035427">&#9670;&#160;</a></span>agendar_atendimento()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void agendar_atendimento </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>cliente</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>profissional</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>horario</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>duração_em_minutos</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Agenda um atendimento. </p>
+<p>Valida o horário, duração, data e disponibilidade do profissional antes de agendar o atendimento.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cliente</td><td>Nome do cliente </td></tr>
+    <tr><td class="paramname">profissional</td><td>Nome do profissional </td></tr>
+    <tr><td class="paramname">data</td><td>Data do atendimento (AAAA-MM-DD) </td></tr>
+    <tr><td class="paramname">horario</td><td>Horário do atendimento </td></tr>
+    <tr><td class="paramname">duração_em_minutos</td><td>Duração do atendimento em minutos </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="agenda__base_8cpp_a4efe4ca2de74a520022feb22a7035427_cgraph.png" border="0" usemap="#aagenda__base_8cpp_a4efe4ca2de74a520022feb22a7035427_cgraph" loading="lazy" alt=""/></div>
+<!-- MAP 3 -->
+</div>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="agenda__base_8cpp_a4efe4ca2de74a520022feb22a7035427_icgraph.png" border="0" usemap="#aagenda__base_8cpp_a4efe4ca2de74a520022feb22a7035427_icgraph" loading="lazy" alt=""/></div>
+<!-- MAP 4 -->
+</div>
+
+</div>
+</div>
+<a id="a11a11c15d122d208d0164456c85854bd" name="a11a11c15d122d208d0164456c85854bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11a11c15d122d208d0164456c85854bd">&#9670;&#160;</a></span>atualizar_consulta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void atualizar_consulta </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>consulta</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>nova_data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>novo_horario</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="agenda__base_8cpp_a11a11c15d122d208d0164456c85854bd_cgraph.png" border="0" usemap="#aagenda__base_8cpp_a11a11c15d122d208d0164456c85854bd_cgraph" loading="lazy" alt=""/></div>
+<!-- MAP 5 -->
+</div>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="agenda__base_8cpp_a11a11c15d122d208d0164456c85854bd_icgraph.png" border="0" usemap="#aagenda__base_8cpp_a11a11c15d122d208d0164456c85854bd_icgraph" loading="lazy" alt=""/></div>
+<!-- MAP 6 -->
+</div>
+
+</div>
+</div>
+<a id="a3d9e451b99e5cd5e23a030be322f136b" name="a3d9e451b99e5cd5e23a030be322f136b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d9e451b99e5cd5e23a030be322f136b">&#9670;&#160;</a></span>extrair_consulta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int extrair_consulta </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>cliente</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>horario</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Extrai a consulta da agenda. </p>
+<p>Extrai a consulta da agenda por meio do nome do cliente, data e horário.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cliente</td><td>Nome do cliente </td></tr>
+    <tr><td class="paramname">data</td><td>Data do atendimento (AAAA-MM-DD) </td></tr>
+    <tr><td class="paramname">horario</td><td>Horário do atendimento </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>int Índice da consulta na agenda ou -1 caso não seja encontrada. </dd></dl>
+<div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="agenda__base_8cpp_a3d9e451b99e5cd5e23a030be322f136b_cgraph.png" border="0" usemap="#aagenda__base_8cpp_a3d9e451b99e5cd5e23a030be322f136b_cgraph" loading="lazy" alt=""/></div>
+<!-- MAP 7 -->
+</div>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="agenda__base_8cpp_a3d9e451b99e5cd5e23a030be322f136b_icgraph.png" border="0" usemap="#aagenda__base_8cpp_a3d9e451b99e5cd5e23a030be322f136b_icgraph" loading="lazy" alt=""/></div>
+<!-- MAP 8 -->
+</div>
+
+</div>
+</div>
+<a id="a5d57981627b23ed11b84f97b3a8ee15d" name="a5d57981627b23ed11b84f97b3a8ee15d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d57981627b23ed11b84f97b3a8ee15d">&#9670;&#160;</a></span>extrair_mes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string extrair_mes </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="agenda__base_8cpp_a5d57981627b23ed11b84f97b3a8ee15d_cgraph.png" border="0" usemap="#aagenda__base_8cpp_a5d57981627b23ed11b84f97b3a8ee15d_cgraph" loading="lazy" alt=""/></div>
+<!-- MAP 9 -->
+</div>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="agenda__base_8cpp_a5d57981627b23ed11b84f97b3a8ee15d_icgraph.png" border="0" usemap="#aagenda__base_8cpp_a5d57981627b23ed11b84f97b3a8ee15d_icgraph" loading="lazy" alt=""/></div>
+<!-- MAP 10 -->
+</div>
+
+</div>
+</div>
+<a id="a7dfdd20571a7a5d64adc247c79414efc" name="a7dfdd20571a7a5d64adc247c79414efc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dfdd20571a7a5d64adc247c79414efc">&#9670;&#160;</a></span>listar_atendimentos_mes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void listar_atendimentos_mes </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>mes</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lista os atendimentos de um determinado mês. </p>
+<p>Descobre os atendimentos do mês, por meio da função extrair_mes e os lista.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mes</td><td>Mês no formato MM </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="agenda__base_8cpp_a7dfdd20571a7a5d64adc247c79414efc_cgraph.png" border="0" usemap="#aagenda__base_8cpp_a7dfdd20571a7a5d64adc247c79414efc_cgraph" loading="lazy" alt=""/></div>
+<!-- MAP 11 -->
+</div>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="agenda__base_8cpp_a7dfdd20571a7a5d64adc247c79414efc_icgraph.png" border="0" usemap="#aagenda__base_8cpp_a7dfdd20571a7a5d64adc247c79414efc_icgraph" loading="lazy" alt=""/></div>
+<!-- MAP 12 -->
+</div>
+
+</div>
+</div>
+<a id="ae66f6b31b5ad750f1fe042a706a4e3d4" name="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&#160;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="agenda__base_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.png" border="0" usemap="#aagenda__base_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" loading="lazy" alt=""/></div>
+<!-- MAP 13 -->
+</div>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="agenda__base_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_icgraph.png" border="0" usemap="#aagenda__base_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_icgraph" loading="lazy" alt=""/></div>
+<!-- MAP 14 -->
+</div>
+
+</div>
+</div>
+<a id="a32a3e49b865bd1e71c17a89a255caa59" name="a32a3e49b865bd1e71c17a89a255caa59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32a3e49b865bd1e71c17a89a255caa59">&#9670;&#160;</a></span>remarcar_atendimento()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void remarcar_atendimento </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>cliente</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>horario</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>nova_data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>novo_horario</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remarca um atendimento. </p>
+<p>Verifica a disponibilidade do profissional antes de remarcar a consulta, por meio da função validar_disponibilidade_de_remarcar.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cliente</td><td>Nome do cliente </td></tr>
+    <tr><td class="paramname">data</td><td>Data do atendimento (AAAA-MM-DD) </td></tr>
+    <tr><td class="paramname">horario</td><td>Horário do atendimento </td></tr>
+    <tr><td class="paramname">nova_data</td><td>Nova data do atendimento </td></tr>
+    <tr><td class="paramname">novo_horario</td><td>Novo horário do atendimento </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="agenda__base_8cpp_a32a3e49b865bd1e71c17a89a255caa59_cgraph.png" border="0" usemap="#aagenda__base_8cpp_a32a3e49b865bd1e71c17a89a255caa59_cgraph" loading="lazy" alt=""/></div>
+<!-- MAP 15 -->
+</div>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="agenda__base_8cpp_a32a3e49b865bd1e71c17a89a255caa59_icgraph.png" border="0" usemap="#aagenda__base_8cpp_a32a3e49b865bd1e71c17a89a255caa59_icgraph" loading="lazy" alt=""/></div>
+<!-- MAP 16 -->
+</div>
+
+</div>
+</div>
+<a id="a55a4cd84dee0843efc25a010ecb29d9d" name="a55a4cd84dee0843efc25a010ecb29d9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55a4cd84dee0843efc25a010ecb29d9d">&#9670;&#160;</a></span>validar_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool validar_data </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Valida a data no formato AAAA-MM-DD. </p>
+<p>Valida a data por meio das posições dos caracteres e do tamanho da string data.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Data no formato AAAA-MM-DD </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>true Se a data for válida e falsa caso contrário. </dd></dl>
+<div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="agenda__base_8cpp_a55a4cd84dee0843efc25a010ecb29d9d_cgraph.png" border="0" usemap="#aagenda__base_8cpp_a55a4cd84dee0843efc25a010ecb29d9d_cgraph" loading="lazy" alt=""/></div>
+<!-- MAP 17 -->
+</div>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="agenda__base_8cpp_a55a4cd84dee0843efc25a010ecb29d9d_icgraph.png" border="0" usemap="#aagenda__base_8cpp_a55a4cd84dee0843efc25a010ecb29d9d_icgraph" loading="lazy" alt=""/></div>
+<!-- MAP 18 -->
+</div>
+
+</div>
+</div>
+<a id="a8f13f46871eaf1439c8263917cb30f0e" name="a8f13f46871eaf1439c8263917cb30f0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f13f46871eaf1439c8263917cb30f0e">&#9670;&#160;</a></span>validar_disponibilidade()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool validar_disponibilidade </td>
+          <td>(</td>
+          <td class="paramtype">string &amp;</td>          <td class="paramname"><span class="paramname"><em>profissional</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em>horario</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Valida a disponibilidade do profissional. </p>
+<p>Valida a disponibilidade do profissional por meio de data, horário e nome. Se tiver algum atendimento marcado para o profissional no mesmo dia e horário, retorna falso.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">profissional</td><td>Nome do profissional </td></tr>
+    <tr><td class="paramname">data</td><td>Data do atendimento (AAAA-MM-DD) </td></tr>
+    <tr><td class="paramname">horario</td><td>Horário do atendimento </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>true Se o profissional estiver disponível e falso caso contrário. </dd></dl>
+<div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="agenda__base_8cpp_a8f13f46871eaf1439c8263917cb30f0e_cgraph.png" border="0" usemap="#aagenda__base_8cpp_a8f13f46871eaf1439c8263917cb30f0e_cgraph" loading="lazy" alt=""/></div>
+<!-- MAP 19 -->
+</div>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="agenda__base_8cpp_a8f13f46871eaf1439c8263917cb30f0e_icgraph.png" border="0" usemap="#aagenda__base_8cpp_a8f13f46871eaf1439c8263917cb30f0e_icgraph" loading="lazy" alt=""/></div>
+<!-- MAP 20 -->
+</div>
+
+</div>
+</div>
+<a id="aee2c686a846aa7d9b164d4e8d6cba462" name="aee2c686a846aa7d9b164d4e8d6cba462"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee2c686a846aa7d9b164d4e8d6cba462">&#9670;&#160;</a></span>validar_disponibilidade_de_remarcar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool validar_disponibilidade_de_remarcar </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>consulta</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>novo_horario</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>nova_data</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Valida a disponibilidade para remarcar um atendimento. </p>
+<p>Verifica se o profissional está disponível para remarcar o atendimento em uma nova data e horário.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">consulta</td><td>Índice da consulta na agenda </td></tr>
+    <tr><td class="paramname">novo_horario</td><td>Novo horário para o atendimento </td></tr>
+    <tr><td class="paramname">nova_data</td><td>Nova data para o atendimento </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>true Se o profissional estiver disponível e falso caso contrário. </dd></dl>
+<div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="agenda__base_8cpp_aee2c686a846aa7d9b164d4e8d6cba462_cgraph.png" border="0" usemap="#aagenda__base_8cpp_aee2c686a846aa7d9b164d4e8d6cba462_cgraph" loading="lazy" alt=""/></div>
+<!-- MAP 21 -->
+</div>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="agenda__base_8cpp_aee2c686a846aa7d9b164d4e8d6cba462_icgraph.png" border="0" usemap="#aagenda__base_8cpp_aee2c686a846aa7d9b164d4e8d6cba462_icgraph" loading="lazy" alt=""/></div>
+<!-- MAP 22 -->
+</div>
+
+</div>
+</div>
+<a id="a6318be48dc2751451e9ca7bc69cea0f4" name="a6318be48dc2751451e9ca7bc69cea0f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6318be48dc2751451e9ca7bc69cea0f4">&#9670;&#160;</a></span>validar_duração()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool validar_duração </td>
+          <td>(</td>
+          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em>duração_em_minutos</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="agenda__base_8cpp_a6318be48dc2751451e9ca7bc69cea0f4_cgraph.png" border="0" usemap="#aagenda__base_8cpp_a6318be48dc2751451e9ca7bc69cea0f4_cgraph" loading="lazy" alt=""/></div>
+<!-- MAP 23 -->
+</div>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="agenda__base_8cpp_a6318be48dc2751451e9ca7bc69cea0f4_icgraph.png" border="0" usemap="#aagenda__base_8cpp_a6318be48dc2751451e9ca7bc69cea0f4_icgraph" loading="lazy" alt=""/></div>
+<!-- MAP 24 -->
+</div>
+
+</div>
+</div>
+<a id="a4ec4f27734a6ef0f1282258f620ee9bd" name="a4ec4f27734a6ef0f1282258f620ee9bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ec4f27734a6ef0f1282258f620ee9bd">&#9670;&#160;</a></span>validar_horario()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool validar_horario </td>
+          <td>(</td>
+          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em>horario</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="agenda__base_8cpp_a4ec4f27734a6ef0f1282258f620ee9bd_cgraph.png" border="0" usemap="#aagenda__base_8cpp_a4ec4f27734a6ef0f1282258f620ee9bd_cgraph" loading="lazy" alt=""/></div>
+<!-- MAP 25 -->
+</div>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="agenda__base_8cpp_a4ec4f27734a6ef0f1282258f620ee9bd_icgraph.png" border="0" usemap="#aagenda__base_8cpp_a4ec4f27734a6ef0f1282258f620ee9bd_icgraph" loading="lazy" alt=""/></div>
+<!-- MAP 26 -->
+</div>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Variáveis</h2>
+<a id="a15753604d406421b50d5fd419f24355c" name="a15753604d406421b50d5fd419f24355c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15753604d406421b50d5fd419f24355c">&#9670;&#160;</a></span>agenda</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;<a class="el" href="struct_atendimento.html">Atendimento</a>&gt; agenda</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="agenda__base_8cpp.html">agenda_base.cpp</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
+</body>
+</html>

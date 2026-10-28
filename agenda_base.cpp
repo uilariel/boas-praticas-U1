@@ -1,21 +1,8 @@
-// ==========================================================
-// Arquivo: agenda_base.cpp
-// Autor: Equipe de estagiarios - 03/02/2024
-// Alterado por: Joao - 15/05/2025
-// Alterado por: Marina - 09/01/2026
-// ==========================================================
-
 #include <iostream>
 #include <string>
 #include <vector>
 using namespace std;
-/*
-d = data
-dur = duração (minutos)
-h = Horario
-p = pessoa (cliente)
-pr = profissional
-*/
+
 struct Atendimento {
   string cliente;
   string profissional;
@@ -26,20 +13,29 @@ struct Atendimento {
 };
 
 vector<Atendimento> agenda;
-/*
- ========================================================================================================
- MODIFICAÇÕES NA FUNÇÃO DE AGENDAR ATENDIMENTO
- => função separada pra validar horario
- => função separada pra validar a duração da conuslta (maior que 0);
- => função unica para verificar se ja tem uma consulta marcada com esse
- profissional nesse mesmo dia e horario
- => função que adciona a consulta na agenda
- */
 
 bool validar_horario(int &horario) { return horario >= 8 && horario <= 17; }
 
 bool validar_duração(int &duração_em_minutos) { return duração_em_minutos > 0; }
+
+/**
+ * @brief Valida a disponibilidade do profissional
+ * 
+ * Valida a disponibilidade do profissional por meio de data, horário e nome. Se tiver 
+ * algum atendimento marcado para o profissional no mesmo dia e horário, retorna falso.
+ * 
+ * @param profissional Nome do profissional
+ * @param data Data do atendimento (AAAA-MM-DD)
+ * @param horario Horário do atendimento 
+ * @return true Se o profissional estiver disponível e falso caso contrário. 
+ * 
+ */
+
+// Só compara o horário de início, e não a sobreposição das durações,
+// porque o horário é guardado como hora cheia e isso mantém simples.
+
 bool validar_disponibilidade(string &profissional, string &data, int &horario) {
+
   bool disponibilidade = true;
   int tamanho = agenda.size();
 
@@ -53,6 +49,16 @@ bool validar_disponibilidade(string &profissional, string &data, int &horario) {
 
   return disponibilidade;
 }
+
+/**
+ * @brief Valida a data no formato AAAA-MM-DD
+ * 
+ * Valida a data por meio das posições dos caracteres e do tamanho da string data. 
+ * 
+ * @param data Data no formato AAAA-MM-DD
+ * @return true Se a data for válida e falsa caso contrário. 
+ * 
+ */
 
 bool validar_data(string data) {
   if (data.length() != 10)
@@ -96,7 +102,7 @@ bool validar_data(string data) {
   return true;
 }
 
-void adcionar_consulta(string cliente, string profissional, string data,
+void adicionar_consulta(string cliente, string profissional, string data,
                        int horario, int duração_em_minutos) {
 
   agenda.push_back(
@@ -104,6 +110,19 @@ void adcionar_consulta(string cliente, string profissional, string data,
 
   cout << "Atendimento marcado para " << cliente << endl;
 }
+
+/**
+ * @brief Agenda um atendimento 
+ * 
+ * Valida o horário, duração, data e disponibilidade do profissional antes de agendar o atendimento.
+ * 
+ * @param cliente Nome do cliente
+ * @param profissional Nome do profissional
+ * @param data Data do atendimento (AAAA-MM-DD)
+ * @param horario Horário do atendimento 
+ * @param duração_em_minutos Duração do atendimento em minutos
+ * 
+ */
 
 void agendar_atendimento(string cliente, string profissional, string data,
                          int horario, int duração_em_minutos) {
@@ -129,18 +148,18 @@ void agendar_atendimento(string cliente, string profissional, string data,
     return;
   }
 
-  adcionar_consulta(cliente, profissional, data, horario, duração_em_minutos);
+  adicionar_consulta(cliente, profissional, data, horario, duração_em_minutos);
 }
-//=========================================================================================
-//  =====================================BLOCO_2===========================================
-//=========================================================================================
 
-/*
- FUNCAO DE REMARCAR O ATENDIMENTO: ETAPAS :;:::::
- => CHECA SE EXISTE ALGUM CLIENTE COM ESSE MESMO NOME, DATA E HORARIO.
- => CHECA SE O HORARIO QUE ESTAMOS QUERENDO JA TEM ALGUMA CONSULTA MARCADA NELE
- com esse profissional;
- => REMARCA CASO ESTEJA TUDO CERTO
+/**
+ * @brief Extrai a consulta da agenda
+ * 
+ * Extrai a consulta da agenda por meio do nome do cliente, data e horário. 
+ * 
+ * @param cliente Nome do cliente
+ * @param data Data do atendimento (AAAA-MM-DD)
+ * @param horario Horário do atendimento 
+ * @return int Índice da consulta na agenda ou -1 caso não seja encontrada.
  */
 
 int extrair_consulta(string cliente, string data, int horario) {
@@ -157,6 +176,17 @@ int extrair_consulta(string cliente, string data, int horario) {
 
   return consulta;
 }
+
+/**
+ * @brief Valida a disponibilidade para remarcar um atendimento
+ * 
+ * Verifica se o profissional está disponível para remarcar o atendimento em uma nova data e horário.
+ * 
+ * @param consulta Índice da consulta na agenda
+ * @param novo_horario Novo horário para o atendimento
+ * @param nova_data Nova data para o atendimento
+ * @return true Se o profissional estiver disponível e falso caso contrário.
+ */
 
 bool validar_disponibilidade_de_remarcar(int consulta, int novo_horario,
                                          string nova_data) {
@@ -180,6 +210,20 @@ void atualizar_consulta(int consulta, string nova_data, int novo_horario) {
   cout << "Remarcado" << endl;
 }
 
+/**
+ * @brief Remarca um atendimento
+ * 
+ * Verifica a disponibilidade do profissional antes de remarcar a consulta, por meio 
+ * da função validar_disponibilidade_de_remarcar. 
+ * 
+ * @param cliente Nome do cliente
+ * @param data Data do atendimento (AAAA-MM-DD)
+ * @param horario Horário do atendimento 
+ * @param nova_data Nova data do atendimento 
+ * @param novo_horario Novo horário do atendimento 
+ * 
+ */
+
 void remarcar_atendimento(string cliente, string data, int horario,
                           string nova_data, int novo_horario) {
   // remarca o atendimento
@@ -199,20 +243,7 @@ void remarcar_atendimento(string cliente, string data, int horario,
   atualizar_consulta(consulta, nova_data, novo_horario);
 }
 
-// void desmarcar(string p, string d, int h) {
-//     ag.erase(...);
-// }
 
-// TODO: função de desmarcar consulta (Joao, 2025)
-/*
- =============================================================================================
- ===============================BLOCO
- 3=======================================================
- =============================================================================================
-
-  FUNCAO DE LISTAR ATENDIMENTOS;
-
-*/
 string extrair_mes(string data) {
   string mes;
   mes.push_back(data[5]);
@@ -220,6 +251,14 @@ string extrair_mes(string data) {
 
   return mes;
 }
+
+/**
+ * @brief Lista os atendimentos de um determinado mês
+ * 
+ * Descobre os atendimentos do mês, por meio da função extrair_mes e os lista. 
+ * 
+ * @param mes Mês no formato MM
+ */
 
 void listar_atendimentos_mes(string mes) {
   bool tem_atendimento = false;

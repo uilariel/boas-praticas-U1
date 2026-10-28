@@ -1,0 +1,10 @@
+PROJECT_NAME           = "AgendaFácil"
+OUTPUT_LANGUAGE        = Brazilian
+INPUT                  = agenda_base.cpp README.md
+OUTPUT_DIRECTORY       = docs
+EXTRACT_ALL            = YES
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+HAVE_DOT               = YES
+CALL_GRAPH             = YES
+CALLER_GRAPH           = YES
